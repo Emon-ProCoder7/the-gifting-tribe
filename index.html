@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gifting Tribe - One Team. Multiple Income Streams.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0; /* Light text */
+        }
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1; /* Indigo-500 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5; /* Indigo-600 */
+        }
+
+        /* Smooth scroll for navigation links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero section background overlay for text readability */
+        .hero-overlay {
+            background-image: linear-gradient(to right, rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.6)), url('https://source.unsplash.com/eT04zE32BMk/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Section backgrounds with futuristic theme */
+        #opportunities {
+            background-image: linear-gradient(to right, rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.7)), url('https://source.unsplash.com/gC_aoAjQl2Q/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #how-it-works {
+            background-image: linear-gradient(to right, rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.7)), url('https://source.unsplash.com/Wa-3T6d0rBo/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #community {
+            background-image: linear-gradient(to right, rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.7)), url('https://source.unsplash.com/Ls8_joW2BLs/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #contact {
+            background-image: linear-gradient(to right, rgba(26, 32, 44, 0.9), rgba(26, 32, 44, 0.7)), url('https://source.unsplash.com/0b2kqCN9oIM/1920x1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+            backdrop-filter: blur(8px); /* Blur effect */
+            -webkit-backdrop-filter: blur(8px); /* Safari support */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #2d3748; /* Darker gray for modal */
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            animation: fadeInScale 0.3s ease-out;
+        }
+
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <nav class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-extrabold text-indigo-500 tracking-wide rounded-md px-3 py-1 transition duration-300 ease-in-out hover:text-indigo-400">
+                The Gifting Tribe
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">Home</a>
+                <a href="#opportunities" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">Opportunities</a>
+                <a href="#about" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">About Us</a>
+                <a href="#how-it-works" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">How It Works</a>
+                <a href="#community" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">Community</a>
+                <a href="#contact" class="text-lg font-medium text-gray-300 hover:text-indigo-400 transition duration-300 ease-in-out px-3 py-2 rounded-md">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 py-2">
+            <a href="#home" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">Home</a>
+            <a href="#opportunities" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">Opportunities</a>
+            <a href="#about" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">About Us</a>
+            <a href="#how-it-works" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">How It Works</a>
+            <a href="#community" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">Community</a>
+            <a href="#contact" class="block text-center text-lg font-medium text-gray-300 hover:text-indigo-400 py-2 transition duration-300 ease-in-out">Contact</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-20">
+        <section id="home" class="hero-overlay relative h-screen flex items-center justify-center text-center p-4">
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6" data-aos="fade-up">
+                    Build Your Team Once, <br class="hidden md:block"> Earn Multiple Income Streams Forever
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Join The Gifting Tribe and unlock a diversified ecosystem of opportunities starting from just <span class="font-bold text-green-400">$7.</span>
+                </p>
+                <p class="text-lg md:text-xl text-gray-300 mb-10" data-aos="fade-up" data-aos-delay="400">
+                    Tired of programs that disappear and having to restart your team? Discover a revolutionary platform built on the blockchain.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6" data-aos="fade-up" data-aos-delay="600">
+                    <a href="#how-it-works" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg">
+                        Get Started for $7
+                    </a>
+                    <a href="#opportunities" class="bg-transparent border-2 border-white hover:border-indigo-400 text-white hover:text-indigo-400 font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg">
+                        Explore Opportunities
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunities" class="py-16 bg-gray-900 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12" data-aos="fade-up">Diversified Opportunities, One Team.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-indigo-500" data-aos="fade-up">
+                        <div class="text-indigo-400 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6zm0 2a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Pop Social / Pop Max</h3>
+                        <p class="text-gray-300 mb-6">
+                            Get Paid to Use Social Media! A Web3, AI-powered platform that pays for engagement. Pop Max offers staking for daily earnings and optional referrals.
+                        </p>
+                        <a href="#full-opportunities" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-green-500" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-green-400 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">The $7 Program Umbrella</h3>
+                        <p class="text-gray-300 mb-6">
+                            Your Gateway to Diversified Income. Access multiple income streams (Forex, Crypto, Travel, etc.) all under one unified team structure.
+                        </p>
+                        <a href="#full-opportunities" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Discover More
+                        </a>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-700 hover:border-purple-500" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-purple-400 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.309L18.691 7 12 9.691 5.309 7 12 4.309zM4 8.44l7 3.5v7.12l-7-3.5V8.44zm16 0v3.5l-7 3.5v-7.12l7-3.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Own Your Network</h3>
+                        <p class="text-gray-300 mb-6">
+                            Building your team on the blockchain ensures long-term stability, security, and earning potential across various projects.
+                        </p>
+                        <button id="explainBlockchainBtn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out mt-4">
+                            ✨ Explain Blockchain Simply
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl shadow-xl p-8 mt-16 border border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-6 text-center">✨ Opportunity Idea Generator</h3>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        Tell us about your interests or skills, and let our AI suggest potential income opportunities within The Gifting Tribe ecosystem!
+                    </p>
+                    <div class="max-w-2xl mx-auto">
+                        <textarea id="userInterests" class="w-full p-4 rounded-md bg-gray-700 border border-gray-600 text-white focus:ring-yellow-500 focus:border-yellow-500 transition duration-300 mb-4" rows="4" placeholder="e.g., 'social media, writing, investing, travel, health &amp; wellness'"></textarea>
+                        <button id="generateOpportunitiesBtn" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg flex items-center justify-center">
+                            <span id="generateOpportunitiesText">Generate Ideas</span>
+                            <div id="generateOpportunitiesSpinner" class="hidden animate-spin rounded-full h-6 w-6 border-b-2 border-white ml-3"></div>
+                        </button>
+                        <div id="opportunityResults" class="mt-8 p-6 bg-gray-700 rounded-lg border border-gray-600 hidden">
+                            <h4 class="text-2xl font-semibold text-white mb-4">Your Tailored Opportunities:</h4>
+                            <p id="opportunityOutput" class="text-gray-200 text-lg leading-relaxed"></p>
+                        </div>
+                        <p id="opportunityError" class="text-red-400 text-center mt-4 hidden">An error occurred. Please try again.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="bg-red-900 bg-opacity-30 rounded-xl shadow-xl p-8 border border-red-700" data-aos="fade-left">
+                    <h2 class="text-4xl font-extrabold text-red-400 mb-6">The Problem We Solve</h2>
+                    <ul class="list-disc list-inside text-gray-200 text-lg space-y-4">
+                        <li><span class="font-bold text-red-300">Too many scams:</span> The online earning space is rife with fraudulent programs.</li>
+                        <li><span class="font-bold text-red-300">Unsustainable programs:</span> Projects that disappear overnight, leaving you empty-handed.</li>
+                        <li><span class="font-bold text-red-300">Unethical owners:</span> Lack of transparency and integrity from platform creators.</li>
+                        <li><span class="font-bold text-red-300">Constantly rebuilding teams:</span> The frustration of losing your network with each failed venture.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-900 bg-opacity-30 rounded-xl shadow-xl p-8 border border-green-700" data-aos="fade-right">
+                    <h2 class="text-4xl font-extrabold text-green-400 mb-6">Our Revolutionary Solution</h2>
+                    <p class="text-gray-200 text-lg mb-6">
+                        Introducing <span class="font-bold text-green-300">My Business Club</span> – a single, reliable platform offering genuine opportunities.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-200 text-lg space-y-4">
+                        <li><span class="font-bold text-green-300">Blockchain Foundation:</span> Your network is secured on the blockchain for long-term stability.</li>
+                        <li><span class="font-bold text-green-300">Genuine Opportunities:</span> Curated projects with real businesses and profit potential.</li>
+                        <li><span class="font-bold text-green-300">Diversified Income:</span> Access multiple streams without constantly switching platforms.</li>
+                        <li><span class="font-bold text-green-300">One Team, One Legacy:</span> Build once, earn forever across various ventures.</li>
+                    </ul>
+                    <div class="mt-8 text-center lg:text-left">
+                        <a href="#how-it-works" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                            See How We Solve It
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-gray-900 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12" data-aos="fade-up">About The Gifting Tribe</h2>
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 items-start">
+                        <div class="text-lg text-gray-300 leading-relaxed space-y-6 text-left" data-aos="fade-up">
+                            <p>
+                                Our mission is to empower individuals with genuine opportunities for wealth building and creation, focusing on a long-term legacy project approach. We believe in creating sustainable income streams that stand the test of time.
+                            </p>
+                            <p>
+                                The $7 program was born from years of experience in the industry, recognizing the widespread frustration of short-lived online programs and the constant need to rebuild teams. Our founder envisioned a platform that solves these core problems, providing stability and real value.
+                            </p>
+                            <p>
+                                <span class="font-bold text-indigo-400">The Gifting Tribe</span> is more than just a name; it's our philosophy. Our mission is "of making the most to gift back the most." We achieve this by providing unparalleled opportunities, invaluable information, and engaging in offline charity work, truly embodying the spirit of giving back.
+                            </p>
+                            <h3 class="text-3xl font-bold text-white mb-6">Why We Are Different</h3>
+                            <ul class="list-disc list-inside space-y-3">
+                                <li><span class="font-bold text-indigo-300">One Team Structure:</span> Build your network once, and benefit across multiple projects.</li>
+                                <li><span class="font-bold text-indigo-300">Multiple Income Streams:</span> Diversify your earnings with a mix of passive and active opportunities.</li>
+                                <li><span class="font-bold text-indigo-300">Blockchain Foundation:</span> Ensures transparency, security, and permanence for your team.</li>
+                                <li><span class="font-bold text-indigo-300">Focus on Real Businesses:</span> We partner with legitimate ventures with proven profit potential.</li>
+                                <li><span class="font-bold text-indigo-300">Solving Industry Problems:</span> Directly addresses scams, unsustainability, and team rebuilding.</li>
+                            </ul>
+                        </div>
+                        <div class="flex justify-center md:justify-end" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://raw.githubusercontent.com/Emon-ProCoder7/the-gifting-tribe/refs/heads/main/sal_profile.jpg" alt="Abstract network illustration" class="w-full max-w-md rounded-lg shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center mb-12" data-aos="fade-up">How It Works &amp; Your Compensation</h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-700" data-aos="fade-left">
+                        <h3 class="text-3xl font-bold text-indigo-400 mb-6">Getting Started &amp; Earning Mechanisms</h3>
+                        <ol class="list-decimal list-inside text-gray-300 text-lg space-y-4 mb-8">
+                            <li><span class="font-bold text-indigo-300">Join for $7:</span> Your gateway to the ecosystem, unlocking the Namaste app and initial benefits.</li>
+                            <li><span class="font-bold text-indigo-300">Upgrade for More:</span> Access higher subscription levels to unlock more opportunities, exclusive education, and deeper benefits.</li>
+                            <li><span class="font-bold text-indigo-300">Web3 Wallet:</span> You'll need a Web3 wallet (MetaMask, Trust Wallet, etc.) and some BNB/USDT on Binance Smart Chain for transactions and staking.</li>
+                            <li><span class="font-bold text-indigo-300">Diverse Earnings:</span> Members can earn commissions and profits through various mechanisms across our ecosystem, including staking, referrals, and product sales.</li>
+                        </ol>
+                        <h4 class="text-2xl font-semibold text-white mb-3">Pop Max Staking Earnings:</h4>
+                        <p class="text-gray-300 text-lg mb-4">
+                            Reiterate daily earning percentages (.4% to 1%) based on staking duration. Principal is returned at the end of the staking period.
+                        </p>
+                        <h4 class="text-2xl font-semibold text-white mb-3">Pop Max Referral Plan:</h4>
+                        <p class="text-gray-300 text-lg">
+                            The optional referral program offers a 15% matching bonus on direct team earnings, with additional levels unlocking based on your rank. You can still earn significantly without recruiting.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-700" data-aos="fade-right">
+                        <h3 class="text-3xl font-bold text-yellow-400 mb-6">The Million-Dollar Potential</h3>
+                        <p class="text-gray-300 text-lg mb-4">
+                            Unlock the potential to earn a million dollars by building your team and achieving "Club 10,000" volume/people requirements over 1-2 years.
+                        </p>
+                        <h4 class="text-2xl font-semibold text-white mb-3">Tiered Payout Structure:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-lg space-y-2 mb-6">
+                            <li><span class="font-bold text-yellow-300">$100k/month</span> for 10 months</li>
+                            <li><span class="font-bold text-yellow-300">$50k/month</span> for 20 months</li>
+                            <li><span class="font-bold text-yellow-300">$25k/month</span> for 40 months</li>
+                        </ul>
+                        <p class="text-gray-300 text-lg mb-8">
+                            *An early bird deadline may offer better requirements for this incredible bonus.
+                        </p>
+
+                        <h3 class="text-3xl font-bold text-indigo-400 mb-6">Seamless Withdrawal Process</h3>
+                        <p class="text-gray-300 text-lg mb-4">
+                            Enjoy daily access to your earnings with our streamlined withdrawal process:
+                        </p>
+                        <ul class="list-disc list-inside text-gray-300 text-lg space-y-2">
+                            <li>Earnings are available daily.</li>
+                            <li>Convert PUSD to PPT.</li>
+                            <li>Utilize major exchanges for easy cash-out.</li>
+                            <li>Benefit from instant withdrawal features where applicable.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-xl shadow-xl p-8 mt-12 border border-gray-700 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">Income Disclaimer:</h3>
+                    <p class="text-gray-400 text-md">
+                        Results are not guaranteed. Earnings vary based on individual effort, market conditions, and participation level. This is not a get-rich-quick scheme.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-12" data-aos="fade-up">Join Our Thriving Tribe!</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                    Become part of "The Gifting Tribe" and connect with a supportive community dedicated to mutual growth and success. Access exclusive resources and stay updated.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-gray-900 rounded-xl shadow-xl p-6 border border-gray-700 transform hover:scale-105 transition duration-300 ease-in-out" data-aos="fade-up">
+                        <div class="text-blue-400 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.364 5.636a9 9 0 11-12.728 0 9 9 0 0112.728 0zM12 10a2 2 0 100-4 2 2 0 000 4zM12 12a4 4 0 100 8 4 4 0 000-8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Telegram Groups</h3>
+                        <p class="text-gray-300 mb-4">For team updates, announcements, support, and giveaways.</p>
+                        <a href="https://t.me/PopMaxTribe" target="_blank" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out mb-2">
+                            Join PopMax Tribe
+                        </a>
+                        <p class="text-gray-400 text-sm">Find us on Telegram: @popsocialmax</p>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl shadow-xl p-6 border border-gray-700 transform hover:scale-105 transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="150">
+                        <div class="text-blue-600 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.262c-1.247 0-1.649.777-1.649 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Facebook Group</h3>
+                        <p class="text-gray-300 mb-4">For community interaction, sharing results, marketing content, and giveaways.</p>
+                        <a href="https://www.facebook.com/share/g/16VeVjBwTd/" target="_blank" class="block bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Join Our Facebook Group
+                        </a>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl shadow-xl p-6 border border-gray-700 transform hover:scale-105 transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-red-600 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.615 3.184c-1.077-.294-2.85-.36-4.6-.38C13.264 2.76 12 2.75 12 2.75s-1.264.01-3.015.054c-1.75.02-3.523.086-4.6.38C3.184 3.478 2.5 4.152 2.5 5.066c0 .914.684 1.588 1.485 1.882 1.077.294 2.85.36 4.6.38C10.736 7.24 12 7.25 12 7.25s1.264-.01 3.015-.054c1.75-.02 3.523-.086 4.6-.38.801-.294 1.485-.968 1.485-1.882 0-.914-.684-1.588-1.485-1.882zM9.75 15.5v-7L16 12l-6.25 3.5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">YouTube Channel</h3>
+                        <p class="text-gray-300 mb-4">Access video content, tutorials, interviews, and presentations.</p>
+                        <a href="https://www.youtube.com/@TheGiftingTribe" target="_blank" class="block bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out">
+                            Watch Tutorials
+                        </a>
+                    </div>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-8 text-lg text-gray-300 leading-relaxed mt-12" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-3xl font-bold text-white mb-6">Daily Zooms &amp; Team Building Philosophy</h3>
+                    <p>
+                        Join our daily live team and company presentations/trainings. We host sessions catering to various time zones (Dubai, Eastern Standard) to ensure everyone can participate.
+                    </p>
+                    <p>
+                        Our team building philosophy emphasizes personalized communication, including video messages, and reinvesting in the team. We focus on consistent effort: "reach out to 100 people for 100 days" to build a strong, lasting network.
+                    </p>
+                    <h3 class="text-3xl font-bold text-white mt-10 mb-6">Events &amp; Resources Library</h3>
+                    <p>
+                        Showcase past and upcoming events (e.g., Vietnam, South Korea) as incredible opportunities for community building and deeper understanding. Qualify for international events and expand your global network.
+                    </p>
+                    <h4 class="text-2xl font-semibold text-white mb-3">Resources Available:</h4>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-2xl space-y-2">
+                        <li>Pop Social White Paper</li>
+                        <li>Marketing Flyers &amp; Infographics</li>
+                        <li>Past Zoom Recordings</li>
+                        <li>Tutorial Videos (signing up, funding, withdrawing)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white text-center mb-12" data-aos="fade-up">Get In Touch</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto text-center mb-10" data-aos="fade-up" data-aos-delay="100">
+                    We're here to help you succeed. Reach out to us through our social channels or use the contact form below. We believe in a personal touch!
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-700" data-aos="fade-left">
+                        <h3 class="text-3xl font-bold text-indigo-400 mb-6">Connect With Us</h3>
+                        <div class="space-y-6">
+                            <a href="https://www.facebook.com/share/g/16VeVjBwTd/" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-blue-500 transition duration-300 ease-in-out text-lg">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.262c-1.247 0-1.649.777-1.649 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z"/></svg>
+                                <span>Facebook Group</span>
+                            </a>
+                            <a href="https://t.me/PopMaxTribe" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-blue-400 transition duration-300 ease-in-out text-lg">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.364 5.636a9 9 0 11-12.728 0 9 9 0 0112.728 0zM12 10a2 2 0 100-4 2 2 0 000 4zM12 12a4 4 0 100 8 4 4 0 000-8z"/></svg>
+                                <span>Telegram: PopMax Tribe</span>
+                            </a>
+                            <a href="https://www.instagram.com/salkhanempire/" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-pink-500 transition duration-300 ease-in-out text-lg">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.707 5.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                                <span>Instagram: @salkhanempire</span>
+                            </a>
+                            <a href="https://www.youtube.com/@TheGiftingTribe" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-red-600 transition duration-300 ease-in-out text-lg">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.615 3.184c-1.077-.294-2.85-.36-4.6-.38C13.264 2.76 12 2.75 12 2.75s-1.264.01-3.015.054c-1.75.02-3.523.086-4.6.38C3.184 3.478 2.5 4.152 2.5 5.066c0 .914.684 1.588 1.485 1.882 1.077.294 2.85.36 4.6.38C10.736 7.24 12 7.25 12 7.25s1.264-.01 3.015-.054c1.75-.02 3.523-.086 4.6-.38.801-.294 1.485-.968 1.485-1.882 0-.914-.684-1.588-1.485-1.882zM9.75 15.5v-7L16 12l-6.25 3.5z"/></svg>
+                                <span>YouTube Channel</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-xl shadow-xl p-8 border border-gray-700" data-aos="fade-right">
+                        <h3 class="text-3xl font-bold text-indigo-400 mb-6">Send Us a Message</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 text-lg font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 text-lg font-medium mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="john.doe@example.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-300 text-lg font-medium mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full p-3 rounded-md bg-gray-700 border border-gray-600 text-white focus:ring-indigo-500 focus:border-indigo-500 transition duration-300" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out text-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="blockchainModal" class="modal flex">
+        <div class="modal-content">
+            <span class="close-button" id="closeModalBtn">×</span>
+            <h3 class="text-3xl font-bold text-indigo-400 mb-6 text-center">Blockchain Explained for The Gifting Tribe</h3>
+            <p id="blockchainExplanation" class="text-gray-200 text-lg leading-relaxed">
+                <div class="flex justify-center items-center h-48">
+                    <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-400"></div>
+                </div>
+                <p class="text-center text-gray-400 mt-4">Generating explanation...</p>
+            </p>
+            <p id="blockchainError" class="text-red-400 text-center mt-4 hidden">Failed to load explanation. Please try again.</p>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 The Gifting Tribe. All rights reserved.</p>
+            <p class="mt-2 text-sm">One Team. Multiple Income Streams. Building Your Legacy on the Blockchain.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#home" class="hover:text-white transition duration-300">Home</a>
+                <a href="#opportunities" class="hover:text-white transition duration-300">Opportunities</a>
+                <a href="#about" class="hover:text-white transition duration-300">About</a>
+                <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu after clicking a link
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    <!-- AOS animation JS and initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
+    <script>
+        // --- Gemini API Integrations ---
+        // 1. Explain Blockchain Simply Feature
+        const explainBlockchainBtn = document.getElementById('explainBlockchainBtn');
+        const blockchainModal = document.getElementById('blockchainModal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const blockchainExplanation = document.getElementById('blockchainExplanation');
+        const blockchainError = document.getElementById('blockchainError');
+
+        explainBlockchainBtn.addEventListener('click', async () => {
+            blockchainModal.style.display = 'flex'; // Show modal
+            blockchainExplanation.innerHTML = `
+                <div class="flex justify-center items-center h-48">
+                    <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-400"></div>
+                </div>
+                <p class="text-center text-gray-400 mt-4">Generating explanation...</p>
+            `; // Show loading spinner
+            blockchainError.classList.add('hidden'); // Hide any previous errors
+
+            try {
+                let chatHistory = [];
+                const prompt = "Explain blockchain technology in a simple, concise way, specifically focusing on its benefits for a platform like 'The Gifting Tribe' where users build teams and earn multiple income streams. Emphasize concepts like security, transparency, owning your network, and long-term stability. Keep it under 200 words.";
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will provide this at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta2/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    blockchainExplanation.innerHTML = text; // Display the generated text
+                } else {
+                    blockchainExplanation.innerHTML = ''; // Clear loading
+                    blockchainError.classList.remove('hidden'); // Show error
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                blockchainExplanation.innerHTML = ''; // Clear loading
+                blockchainError.classList.remove('hidden'); // Show error
+                console.error('Error calling Gemini API for blockchain explanation:', error);
+            }
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            blockchainModal.style.display = 'none'; // Hide modal
+        });
+
+        // Close modal if clicked outside content
+        window.addEventListener('click', (event) => {
+            if (event.target == blockchainModal) {
+                blockchainModal.style.display = 'none';
+            }
+        });
+
+        // 2. Opportunity Idea Generator Feature
+        const userInterestsInput = document.getElementById('userInterests');
+        const generateOpportunitiesBtn = document.getElementById('generateOpportunitiesBtn');
+        const generateOpportunitiesText = document.getElementById('generateOpportunitiesText');
+        const generateOpportunitiesSpinner = document.getElementById('generateOpportunitiesSpinner');
+        const opportunityResults = document.getElementById('opportunityResults');
+        const opportunityOutput = document.getElementById('opportunityOutput');
+        const opportunityError = document.getElementById('opportunityError');
+
+        generateOpportunitiesBtn.addEventListener('click', async () => {
+            const interests = userInterestsInput.value.trim();
+            if (!interests) {
+                opportunityOutput.innerHTML = '<p class="text-red-400">Please enter your interests or skills to generate ideas.</p>';
+                opportunityResults.classList.remove('hidden');
+                return;
+            }
+
+            // Show loading state
+            generateOpportunitiesText.textContent = 'Generating...';
+            generateOpportunitiesSpinner.classList.remove('hidden');
+            generateOpportunitiesBtn.disabled = true;
+            opportunityResults.classList.add('hidden');
+            opportunityError.classList.add('hidden');
+            opportunityOutput.innerHTML = '';
+
+            try {
+                let chatHistory = [];
+                const prompt = `Given the user's interests/skills: "${interests}", suggest 3-5 potential income opportunities or ways they could leverage the existing offerings within 'The Gifting Tribe' ecosystem. The Gifting Tribe offers opportunities in Web3 social media (Pop Social/Pop Max for staking/referrals), a $7 program umbrella (Forex, Crypto, Travel, etc.), and building a team on the blockchain. Be specific and actionable. Format as a bulleted list.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will provide this at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta2/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    opportunityOutput.innerHTML = text.replace(/\n/g, '<br>'); // Display generated text, convert newlines to <br>
+                    opportunityResults.classList.remove('hidden'); // Show results container
+                } else {
+                    opportunityError.classList.remove('hidden');
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                opportunityError.classList.remove('hidden');
+                console.error('Error calling Gemini API for opportunity generation:', error);
+            } finally {
+                // Reset button state
+                generateOpportunitiesText.textContent = 'Generate Ideas';
+                generateOpportunitiesSpinner.classList.add('hidden');
+                generateOpportunitiesBtn.disabled = false;
+            }
+        });
+    </script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="W_foPMW1q0N4K8XBOojbU";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+</body>
+</html>
