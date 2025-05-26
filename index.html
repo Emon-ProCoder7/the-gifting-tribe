@@ -123,6 +123,13 @@
                 transform: scale(1);
             }
         }
+elevenlabs-convai {
+      position: fixed !important;
+      bottom: 20px !important;
+      left: 20px !important;
+      right: auto !important;
+      z-index: 9999 !important;
+    }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -683,5 +690,30 @@
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="W_foPMW1q0N4K8XBOojbU";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
+<iframe
+    src="https://agency-m8877o.chat-dash.com/iframe/6834cbb535371c909a2545db"
+    style="width: 100%; height: 100vh;"
+    frameborder="0"
+    allow="microphone" //if this widget needs to use microphone
+>
+</iframe>
+<elevenlabs-convai agent-id="agent_01jw74rs7efnpbryj7nnwywtv6"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+<iframe id="JotFormIFrame-01970e6f55a377b288380c27873f8e17baae" title="Jenny: Personal Assistant"
+  onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+  allow="geolocation; microphone; camera; fullscreen"
+  src="https://agent.jotform.com/01970e6f55a377b288380c27873f8e17baae/voice?embedMode=iframe&background=1&shadow=1"
+  frameborder="0" style="
+    min-width:100%;
+    max-width:100%;
+    height:688px;
+    border:none;
+    width:350px;
+  " scrolling="no">
+</iframe>
+<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+<script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-01970e6f55a377b288380c27873f8e17baae']",
+    "https://www.jotform.com")
+</script>
 </body>
 </html>
